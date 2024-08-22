@@ -38,7 +38,7 @@ class WXRepository private constructor() {
         runBlocking {
             // 主协程下面执行 flow 异步请求
             flow {
-                emit(api.getHomeList22())
+                emit(api.getHomeList22(1))
             }.flowOn(Dispatchers.IO).catch {
                 println(it)
                 println(it.parseErrorString()) // 打印异常信息

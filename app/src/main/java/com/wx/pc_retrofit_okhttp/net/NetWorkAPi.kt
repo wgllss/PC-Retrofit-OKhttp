@@ -6,6 +6,7 @@ import com.wx.pc_retrofit_okhttp.data.WanAndroidHome
 import retrofit2.http.Field
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface NetWorkAPi {
 
@@ -19,6 +20,6 @@ interface NetWorkAPi {
     @GET("article/list/0/json")
     suspend fun getHomeList(): String
 
-    @GET("article/list/0/json")
-    suspend fun getHomeList22(): HomeData
+    @GET("article/list/{path}/json")
+    suspend fun getHomeList22(@Path("path") page: Int): HomeData
 }
